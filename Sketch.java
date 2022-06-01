@@ -1,7 +1,16 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+  // Global Variables
+  int Height = 300;
+  int Width = 300;
+  int DOT_SIZE = 10;
+  int ALL_DOTS = 900;
+  int RANDOM_POSITION = 29;
+  int DELAY = 150;
+  int X[] = new int[ALL_DOTS];
+  int Y[] = new int[ALL_DOTS];
+
 	
   /**
    * Called once at the beginning of execution, put your size all in this method
