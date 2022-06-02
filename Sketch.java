@@ -4,12 +4,10 @@ public class Sketch extends PApplet {
   // Global Variables
   int Height = 300;
   int Width = 300;
-  int DOT_SIZE = 10;
-  int ALL_DOTS = 900;
-  int RANDOM_POSITION = 29;
-  int DELAY = 150;
-  int X[] = new int[ALL_DOTS];
-  int Y[] = new int[ALL_DOTS];
+  int initScreen;
+  int gameScreen = 0;
+  int gameOverScreen;
+  
 
 	
   /**
@@ -25,21 +23,31 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(210, 255, 173);
+    background(0);
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	  
-	// sample code, delete this stuff
-    stroke(128);
-    line(150, 25, 270, 350);  
-
-    stroke(255);
-    line(50, 125, 70, 50);  
+    if (gameScreen == 0);
   }
+
+  public void initScreen() {
+  }
+
+  public void gameScreen() {
+  }
+
+  public void gameOverScreen() {
+  }
+
+  public void startGame() {
+    gameScreen=1;
+  }
+
+  public void mousePressed() {
+  }
+}  
+
   
-  // define other methods down here.
-}
