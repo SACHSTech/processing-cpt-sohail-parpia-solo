@@ -19,7 +19,16 @@ public class Sketch extends PApplet {
   int player2X = 750;
   int player2Y = 65;
 
+  // Player 1&2 Width and Height (Location)
+  int playerWidth = 30;
+  int playerHeight = 25;  
+
+  // Player 1&2 (Speed)
+  int player1Speed = 4;
+  int player2Speed = 4;
+
   
+
 
   
 
