@@ -15,6 +15,12 @@ public class Sketch extends PApplet {
   int player1X = 25;
   int player1Y = 250;
 
+  // Player 2 Variables
+  int player2X = 750;
+  int player2Y = 65;
+
+  
+
   
 
 
