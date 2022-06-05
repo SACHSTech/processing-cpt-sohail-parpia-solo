@@ -1,22 +1,17 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-  // Game Variables
+  // Global Variables
 
- float[]brickX = new float[20];
- int x = 250;
- int y = 350;
- int speedX = 4;
- int speedY = -4;
- int paddleX = 250;
- int paddleY = 350;
- int score = 0;
- int level = 1;
- int waitTime = 1;
- int i;
- int x_Temp;
- int y_Temp;
- int blocks_Gone;
+  // Ball Variables
+  int ballX = 400;
+  int ballY = 300;
+  int ballSpeed = 2;
+  int ballDirectionX = -2;
+  int ballDirectionY = -2;
+  
+
+
  
 
   /**
@@ -25,7 +20,6 @@ public class Sketch extends PApplet {
   public void settings() {
 	// put your size call here
     size(500, 500);
-    rectMode(CENTER);
     }
   
 
@@ -35,18 +29,15 @@ public class Sketch extends PApplet {
    */
   public void setup() {
     background(0, 0, 0);
+    rectMode(CENTER);
   }
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-    x = x + speedX;
-    y = y + speedY;
-
-    if (x>width || x<0)  
-    speedX = -speedX;
-
-  if (y<0)
-    speedY = -speedY;
   }
+}                                                                                                    
+    
+  
+    
