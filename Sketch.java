@@ -9,6 +9,12 @@ public class Sketch extends PApplet {
   int ballSpeed = 2;
   int ballDirectionX = -2;
   int ballDirectionY = -2;
+
+
+  // Player 1 Variables
+  int player1X = 25;
+  int player1Y = 250;
+
   
 
 
