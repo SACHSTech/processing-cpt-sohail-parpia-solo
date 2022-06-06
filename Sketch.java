@@ -90,6 +90,14 @@ public class Sketch extends PApplet {
 
 
   private void splash() {
+    //splashscreen
+	background(0);
+	noStroke();
+
+  // Title of The Game
+  fill(255, 253, 252);
+  textSize(55);
+  text("CHAMPIONS LEAGUE", 400, 150);
   }
   }
                                                                                                  
