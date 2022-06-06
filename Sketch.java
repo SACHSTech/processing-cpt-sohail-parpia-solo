@@ -3,7 +3,7 @@ import processing.core.PApplet;
 public class Sketch extends PApplet {
   // Global Variables
 
-  // Soccer Ball Variable
+  // Ball Variables
   int ballX = 400;
   int ballY = 300;
   int ballSpeed = 2;
@@ -19,11 +19,11 @@ public class Sketch extends PApplet {
   int player2X = 750;
   int player2Y = 65;
 
-  // Player 1&2 Width and Height (Location)
+  // Location of Players
   int playerWidth = 30;
   int playerHeight = 25;  
 
-  // Player 1&2 (Speed)
+  // Speed of Players
   int player1Speed = 4;
   int player2Speed = 4;
 
@@ -43,7 +43,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(700, 500);
+    size(800, 600);
     }
   
 
@@ -52,7 +52,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(141, 221, 252);
+    background(255, 59, 20);
     rectMode(CENTER);
     imageMode(CENTER);
     textAlign(CENTER);
@@ -64,12 +64,12 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-    // In Game Stages to Run
+    // Game Stages to Run
     if(stage == 0){
       splash();
     }//close 0
     
-    if(stage == 1){ //easy
+    if(stage == 1){ //easy mode of the game
       game(); //run game
     }//close 1
     
@@ -90,16 +90,28 @@ public class Sketch extends PApplet {
 
 
   private void splash() {
-    //splashscreen
+    // Beginning Game Screen
 	background(0);
 	noStroke();
 
   // Title of The Game
   fill(255, 253, 252);
   textSize(55);
-  text("CHAMPIONS LEAGUE", 400, 150);
-  }
-  }
+  text("CHAMPIONS LEAGUE FINAL", 400, 150);
+
+//author
+fill(0,255, 255);
+textSize(25); 
+text("UEFA", 400, 200);
+
+
+//Begin Game
+fill(12, 222, 237);
+textSize(30); 
+text("Start to Play", 400, 400);
+}
+}
+
                                                                                                  
     
   
