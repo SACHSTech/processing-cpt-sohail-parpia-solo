@@ -94,12 +94,12 @@ public class Sketch extends PApplet {
 	background(0);
 	noStroke();
 
-  // Title of The Game
+  // Name of Game
   fill(255, 253, 252);
   textSize(55);
   text("CHAMPIONS LEAGUE FINAL", 400, 150);
 
-//author
+//Host of Game
 fill(0,255, 255);
 textSize(25); 
 text("UEFA", 400, 200);
