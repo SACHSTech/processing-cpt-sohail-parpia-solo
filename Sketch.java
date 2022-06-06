@@ -3,7 +3,7 @@ import processing.core.PApplet;
 public class Sketch extends PApplet {
   // Global Variables
 
-  // Ball Variables
+  // Soccer Ball Variable
   int ballX = 400;
   int ballY = 300;
   int ballSpeed = 2;
@@ -27,20 +27,23 @@ public class Sketch extends PApplet {
   int player1Speed = 4;
   int player2Speed = 4;
 
-  
+  // Scoreboard
+  int player1Score = 0;
+  int player2Score = 0;
 
+  // Inside Game Variables
+  int stage = 0;
 
-  
-
-
- 
+  // Other Varibles Included
+  int splash;
+  int game;
 
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
   public void settings() {
 	// put your size call here
-    size(500, 500);
+    size(700, 500);
     }
   
 
@@ -49,16 +52,47 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(0, 0, 0);
+    background(141, 221, 252);
     rectMode(CENTER);
+    imageMode(CENTER);
+    textAlign(CENTER);
+    //close setup
   }
+
 
   /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
+    // In Game Stages to Run
+    if(stage == 0){
+      splash();
+    }//close 0
+    
+    if(stage == 1){ //easy
+      game(); //run game
+    }//close 1
+    
+    
+    if(stage == 2){
+      p1Wins();
+    }//close = 2
+    
+  }//close draw
+
+
+  private void p1Wins() {
   }
-}                                                                                                    
+
+
+  private void game() {
+  }
+
+
+  private void splash() {
+  }
+  }
+                                                                                                 
     
   
     
