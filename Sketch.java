@@ -1,4 +1,5 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Sketch extends PApplet {
   // Global Variables
@@ -28,10 +29,13 @@ public class Sketch extends PApplet {
   int score;
   int player1Score;
 
+  // Wins
+  int player1Wins;
+  int player2Wins;
+
+
   // Keyboard Variables
   int keyPressed;
-
-  // 
 
   // In Game Variables
   int stage = 0;
@@ -79,8 +83,40 @@ public class Sketch extends PApplet {
     
   }//close draw
 
+
+  private void player1Wins() {
+  }
+
+
+  private void game() {
+  }
+
+
+  private void splash() {
+   //Main Screen
+	background(235, 230, 247);
+	noStroke();
+	
+	//Name of The Game
+	fill(255,0,0);
+	textSize(60); 
+	text("CHAMPIONS LEAGUE SOLO", 400, 150);
+	
+	//Creator
+	fill(0);
+	textSize(30); 
+	text("PRESENTED BY SOHAIL", 400, 200);
+	
+	//Begin to Play
+	fill(0);
+	textSize(25); 
+	text("CLICK SPACE TO BEGIN GAME", 400, 400);
+
+}//close splash
+  }
+
   
-}
+
 
                                                                                                   
     
