@@ -73,9 +73,11 @@ public class Sketch extends PApplet {
 	background(75, 255, 10); 
 	noFill();
 	stroke(255);
-	strokeWeight(2); 
+	strokeWeight(7); 
 	rect(400, 250, 800, 500); 
 	line(400, 0, 400, 500); 
+
+	// Soccer Ball
 
 }
 }
