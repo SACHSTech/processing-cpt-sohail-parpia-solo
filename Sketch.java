@@ -96,9 +96,21 @@ private void game() {
 
 
 private void splash() {
+	background(255,0,255);
+	noStroke();
 	
+	//Name of Game
+	fill(43, 57, 255);
+	textSize(60); 
+	text("UEFA FOOTBALL FAST", 400, 150);
+
+	//START
+	fill(255, 250, 0);
+	textSize(25); //fontsize
+	text("SPACE TO START", 400, 400);
+
+}//close splash
 	
-}
 }
 
 
