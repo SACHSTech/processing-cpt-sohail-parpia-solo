@@ -63,8 +63,7 @@ public class Sketch extends PApplet {
 }
 
 
-
-  /**
+/**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
@@ -73,43 +72,74 @@ public class Sketch extends PApplet {
 		splash();
 	}//close 0
 
-	if(stage == 1){ //easy
-		game(); //run game
+	if(stage == 1){ 
+		game(); 
 	}//close 1
 }
 
 
 private void game() {
+	//call functions
+	keyTyped();
+	
+	
 	//Soccer Field
-	background(0, 176, 32); 
+	background(23, 140, 0); 
 	noFill();
 	stroke(255);
-	strokeWeight(7); 
+	strokeWeight(2); 
 	rect(400, 250, 800, 500); 
 	line(400, 0, 400, 500); 
-
-	// Soccer Ball
+	
+	//Soccer Ball
 	noStroke();
-	fill(255, 251, 0); 
+	fill(255); 
 	rect(ballX, ballY, 20, 20);
+	
+	//Player
+	noStroke();
+	fill(255);
+	rect(p1X, p1Y, pWidth, pHeight); 
+	
+	//Goal
+	fill(255, 250, 0);
+	rect(p2X, p2Y, pWidth, pHeight); 
+	fill(0);
+	rect(p2X-10, p2Y, pWidth, pHeight-20); 
 }
 
 
+
 private void splash() {
-	background(255,0,255);
+	background(0,255,255);
 	noStroke();
 	
 	//Name of Game
-	fill(43, 57, 255);
+	fill(85, 51, 255);
 	textSize(60); 
 	text("UEFA FOOTBALL FAST", 400, 150);
 
 	//START
-	fill(255, 250, 0);
-	textSize(25); //fontsize
+	fill(255, 0, 55);
+	textSize(35); 
 	text("SPACE TO START", 400, 400);
 
 }//close splash
+
+	public void keyPressed(){
+		if (key == 'w') {
+			p1Y -= pSpeed;
+		  }
+		  if (key == 'a') {
+			p1X -= pSpeed;
+		  }
+		  if (key == 's') {
+			p1Y += pSpeed;
+		  }
+		  if (key == 'd') {
+			p1X += pSpeed;
+	}
+}
 	
 }
 
