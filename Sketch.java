@@ -68,9 +68,20 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-	
+
+	if(stage == 0){
+		splash();
+	}//close 0
+
+	if(stage == 1){ //easy
+		game(); //run game
+	}//close 1
+}
+
+
+private void game() {
 	//Soccer Field
-	background(75, 255, 10); 
+	background(0, 176, 32); 
 	noFill();
 	stroke(255);
 	strokeWeight(7); 
@@ -78,7 +89,15 @@ public class Sketch extends PApplet {
 	line(400, 0, 400, 500); 
 
 	// Soccer Ball
+	noStroke();
+	fill(255, 251, 0); 
+	rect(ballX, ballY, 20, 20);
+}
 
+
+private void splash() {
+	
+	
 }
 }
 
