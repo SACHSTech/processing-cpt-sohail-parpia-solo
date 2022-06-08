@@ -12,10 +12,10 @@ public class Sketch extends PApplet {
 
 
   // Player Variables
-  int p1X = 25;
-  int p1Y = 250;
-  int p2X = 780;
-  int p2Y = 245;
+  int player1X = 25;
+  int player1Y = 250;
+  int pZX = 780;
+  int pZY = 245;
 
   // Location of Player
   int pWidth = 30;
@@ -82,13 +82,13 @@ public class Sketch extends PApplet {
 	//Player
 	noStroke();
 	fill(21, 0, 255);
-	rect(p1X, p1Y, pWidth, pHeight); 
+	rect(player1X, player1Y, pWidth, pHeight); 
 	
 	//Goal
 	fill(255, 250, 0);
-	rect(p2X, p2Y, pWidth, pHeight); 
+	rect(pZX, pZY, pWidth, pHeight); 
 	fill(0);
-	rect(p2X-10, p2Y, pWidth, pHeight-20); 
+	rect(pZX-10, pZY, pWidth, pHeight-20); 
 	}
 
 
@@ -97,16 +97,16 @@ public class Sketch extends PApplet {
 
 	public void keyPressed(){
 		if (key == 'w') {
-			p1Y -= pSpeed;
+			player1Y -= pSpeed;
 		  }
 		  if (key == 'a') {
-			p1X -= pSpeed;
+			player1X -= pSpeed;
 		  }
 		  if (key == 's') {
-			p1Y += pSpeed;
+			player1Y += pSpeed;
 		  }
 		  if (key == 'd') {
-			p1X += pSpeed;
+			player1X += pSpeed;
 	}
 }
 	
