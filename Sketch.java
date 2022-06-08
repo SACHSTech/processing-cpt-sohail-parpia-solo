@@ -36,8 +36,9 @@ public class Sketch extends PApplet {
   // Keyboard Variables
   int keyPressed;
 
-  //Other Variables
-  int stage = 0;
+  // Snowfall Variables
+  float[] circleY = new float[75];
+ float[] snow = new float[75];
 
 
 
@@ -66,23 +67,7 @@ public class Sketch extends PApplet {
 /**
    * Called repeatedly, anything drawn to the screen goes here
    */
-  public void draw() {
-
-	if(stage == 0){
-		splash();
-	}//close 0
-
-	if(stage == 1){ 
-		game(); 
-	}//close 1
-}
-
-
-private void game() {
-	//call functions
-	keyTyped();
-	
-	
+  public void draw() {	
 	//Soccer Field
 	background(23, 140, 0); 
 	noFill();
@@ -110,22 +95,6 @@ private void game() {
 
 
 
-private void splash() {
-	background(0,255,255);
-	noStroke();
-	
-	//Name of Game
-	fill(85, 51, 255);
-	textSize(60); 
-	text("UEFA FOOTBALL FAST", 400, 150);
-
-	//START
-	fill(255, 0, 55);
-	textSize(35); 
-	text("SPACE TO START", 400, 400);
-
-}//close splash
-
 	public void keyPressed(){
 		if (key == 'w') {
 			p1Y -= pSpeed;
@@ -142,6 +111,7 @@ private void splash() {
 }
 	
 }
+
 
 
 
