@@ -35,11 +35,7 @@ public class Sketch extends PApplet {
 
   // Keyboard Variables
   int keyPressed;
-
-  // Snowfall Variables
-  float[] circleY = new float[75];
- float[] snow = new float[75];
-
+  
 
 
   /**
@@ -67,9 +63,10 @@ public class Sketch extends PApplet {
 /**
    * Called repeatedly, anything drawn to the screen goes here
    */
-  public void draw() {	
+  public void draw() {
+
 	//Soccer Field
-	background(23, 140, 0); 
+	background(0, 255, 115); 
 	noFill();
 	stroke(255);
 	strokeWeight(2); 
@@ -78,12 +75,13 @@ public class Sketch extends PApplet {
 	
 	//Soccer Ball
 	noStroke();
-	fill(255); 
+	fill(255, 0, 2213); 
 	rect(ballX, ballY, 20, 20);
+
 	
 	//Player
 	noStroke();
-	fill(255);
+	fill(21, 0, 255);
 	rect(p1X, p1Y, pWidth, pHeight); 
 	
 	//Goal
@@ -91,7 +89,9 @@ public class Sketch extends PApplet {
 	rect(p2X, p2Y, pWidth, pHeight); 
 	fill(0);
 	rect(p2X-10, p2Y, pWidth, pHeight-20); 
-}
+	}
+
+
 
 
 
