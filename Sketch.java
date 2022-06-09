@@ -60,9 +60,6 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
-    background(255, 59, 20);
-    img = loadImage("Stadium.jpg");
-    img.resize(width, height);
 }
 
 
@@ -85,12 +82,14 @@ public class Sketch extends PApplet {
   }
 
 
-private void game() {
+public void game() {
+
 }
 
 
-private void splash() {
-  img = loadImage("Stadium.jpg");
+public void splash() {
+  // Beginning Home Screen
+  img = loadImage("UEFA-Champions-League.jpg");
     img.resize(width, height);
 
     //Name of Game
