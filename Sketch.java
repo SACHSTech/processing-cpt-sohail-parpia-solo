@@ -1,7 +1,11 @@
 import processing.core.PApplet;
+import processing.core.PImage;
 
 public class Sketch extends PApplet {
   // Global Variables
+
+  // Images
+  PImage img;
 
   // Ball Variables
   float ballX = 400;
@@ -30,11 +34,14 @@ public class Sketch extends PApplet {
 
   // Wins
   int player1Wins;
-  int player2Wins;
+  int playerZWins;
 
 
   // Keyboard Variables
   int keyPressed;
+
+  // Screens
+  int stage;
   
 
 
@@ -54,9 +61,8 @@ public class Sketch extends PApplet {
 
   public void setup() {
     background(255, 59, 20);
-    rectMode(CENTER);
-    imageMode(CENTER);
-    textAlign(CENTER);
+    img = loadImage("Stadium.jpg");
+    img.resize(width, height);
 }
 
 
@@ -65,52 +71,42 @@ public class Sketch extends PApplet {
    */
   public void draw() {
 
-	//Soccer Field
-	background(0, 255, 115); 
-	noFill();
-	stroke(255);
-	strokeWeight(2); 
-	rect(400, 250, 800, 500); 
-	line(400, 0, 400, 500); 
-	
-	//Soccer Ball
-	noStroke();
-	fill(255, 0, 2213); 
-	rect(ballX, ballY, 20, 20);
+    image(img, 0, 0);
 
+    //determine what stage to run
 	
-	//Player
-	noStroke();
-	fill(21, 0, 255);
-	rect(player1X, player1Y, pWidth, pHeight); 
+	if(stage == 0){
+		splash();
+	}//close 0
 	
-	//Goal
+	if(stage == 1){ //easy
+		game(); //run game
+	}//close 1
+  }
+
+
+private void game() {
+}
+
+
+private void splash() {
+  img = loadImage("Stadium.jpg");
+    img.resize(width, height);
+
+    //Name of Game
 	fill(255, 250, 0);
-	rect(pZX, pZY, pWidth, pHeight); 
-	fill(0);
-	rect(pZX-10, pZY, pWidth, pHeight-20); 
-	}
+	textSize(60); 
+	text("UEFA FOOTBALL", 400, 150);
 
+  	//START
+	fill(255, 250, 0);
+	textSize(25); 
+	text("Space To Begin", 400, 400);
 
+}//close splash
 
-
-
-	public void keyPressed(){
-		if (key == 'w') {
-			player1Y -= pSpeed;
-		  }
-		  if (key == 'a') {
-			player1X -= pSpeed;
-		  }
-		  if (key == 's') {
-			player1Y += pSpeed;
-		  }
-		  if (key == 'd') {
-			player1X += pSpeed;
-	}
 }
-	
-}
+
 
 
 
