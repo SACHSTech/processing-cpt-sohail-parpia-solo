@@ -16,10 +16,10 @@ public class Sketch extends PApplet {
 
 
   // Player Variables
-  int player1X = 25;
-  int player1Y = 250;
-  int pZX = 780;
-  int pZY = 245;
+  int p1X = 25;
+  int p1Y = 250;
+  int p2X = 780;
+  int p2Y = 245;
 
   // Location of Player
   int pWidth = 30;
@@ -33,8 +33,8 @@ public class Sketch extends PApplet {
   int p1Score;
 
   // Wins
-  int player1Wins;
-  int playerZWins;
+  int p11Wins;
+  int p2Wins;
 
 
   // Keyboard Variables
@@ -60,6 +60,11 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
+    img = loadImage("UEFA-Champions-League.jpg");
+    img.resize(width, height);
+    rectMode(CENTER);
+    textAlign(CENTER);
+
 }
 
 
@@ -70,41 +75,67 @@ public class Sketch extends PApplet {
 
     image(img, 0, 0);
 
-    //determine what stage to run
+    
 	
 	if(stage == 0){
 		splash();
 	}//close 0
 	
-	if(stage == 1){ //easy
-		game(); //run game
+	if(stage == 1){ 
+		game(); 
 	}//close 1
   }
 
 
 public void game() {
-
+  //call functions
+	keyTyped();
+	
+	
+	//Soccer Field
+	background(0); 
+	noFill();
+	stroke(255);
 }
 
 
+
+
+
 public void splash() {
-  // Beginning Home Screen
   img = loadImage("UEFA-Champions-League.jpg");
     img.resize(width, height);
 
-    //Name of Game
-	fill(255, 250, 0);
-	textSize(60); 
-	text("UEFA FOOTBALL", 400, 150);
-
   	//START
-	fill(255, 250, 0);
-	textSize(25); 
+	fill(225, 255, 0);
+	textSize(40); 
 	text("Space To Begin", 400, 400);
 
 }//close splash
 
+
+
+public void keyPressed(){
+  if (keyCode == 'w') {
+    p1Y -= pSpeed;
+  }
+  if (keyCode == 'a') {
+    p1X -= pSpeed;
+  }
+  if (keyCode == 's') {
+    p1Y += pSpeed;
+  }
+  if (keyCode == 'd') {
+    p1X += pSpeed;
+  }
+  if (keyCode == 'e' ){
+  stage = 0;
+  }//close space
 }
+}
+
+
+
 
 
 
