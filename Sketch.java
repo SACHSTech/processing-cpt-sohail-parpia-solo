@@ -1,48 +1,48 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
+
 public class Sketch extends PApplet {
   // Global Variables
 
-  // Images
+  // Main Screen Image
   PImage img;
 
-  // Ball Variables
+  // Soccer Ball Variables
   float ballX = 400;
   float ballY = 300;
   float ballSpeed = 1;
   float ballDirectionX = -1;
   float ballDirectionY = -1;
 
-
   // Player Variables
-  int p1X = 25;
-  int p1Y = 250;
-  int p2X = 780;
-  int p2Y = 245;
+  int player1X = 25;
+  int player1Y = 250;
+  int player2X = 780;
+  int player2Y = 245;
 
   // Location of Player
   int pWidth = 30;
   int pHeight = 25;  
 
   // Speed of Player
-  int pSpeed = 6;
+  int playerSpeed = 6;
 
   // Scoreboard
-  int pScore;
-  int p1Score;
+  int playerScore;
+  int player1Score;
 
   // Wins
-  int p11Wins;
-  int p2Wins;
-
+  int player11Wins;
 
   // Keyboard Variables
   int keyPressed;
 
   // Screens
   int stage;
+
   
+ 
 
 
   /**
@@ -64,75 +64,50 @@ public class Sketch extends PApplet {
     img.resize(width, height);
     rectMode(CENTER);
     textAlign(CENTER);
-
 }
+  
+
 
 
 /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-
     image(img, 0, 0);
-
-    
-	
-	if(stage == 0){
-		splash();
-	}//close 0
-	
-	if(stage == 1){ 
-		game(); 
-	}//close 1
+  
+  if(stage == 2){
+    splash();
+  }//close 0
+  
+  if(stage == 0){ 
+    game(); 
+  }//close 0
   }
 
 
-public void game() {
-  //call functions
-	keyTyped();
-	
-	
-	//Soccer Field
-	background(0); 
-	noFill();
-	stroke(255);
+private void game() {
 }
 
 
+private void splash() {
 
-
-
-public void splash() {
+// Home Screen Image
   img = loadImage("UEFA-Champions-League.jpg");
-    img.resize(width, height);
+  img.resize(width, height);
 
-  	//START
-	fill(225, 255, 0);
-	textSize(40); 
-	text("Space To Begin", 400, 400);
+    //START
+  fill(225, 255, 0);
+  textSize(40); 
+  text("Space To Begin", 400, 400);
 
 }//close splash
 
 
 
-public void keyPressed(){
-  if (keyCode == 'w') {
-    p1Y -= pSpeed;
-  }
-  if (keyCode == 'a') {
-    p1X -= pSpeed;
-  }
-  if (keyCode == 's') {
-    p1Y += pSpeed;
-  }
-  if (keyCode == 'd') {
-    p1X += pSpeed;
-  }
-  if (keyCode == 'e' ){
-  stage = 0;
-  }//close space
 }
-}
+
+
+
 
 
 
