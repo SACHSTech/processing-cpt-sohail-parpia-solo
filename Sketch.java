@@ -196,7 +196,25 @@ public class Sketch extends PApplet {
 
 }
 
+  public void keyPressed(){
+    if (keyCode == 'w') {
+      player1Y -= player1Speed;
+    }
+    if (keyCode == 'a') {
+      player1X -= player1Speed;
+    }
+    if (keyCode == 's') {
+      player1Y += player1Speed;
+    }
+    if (keyCode == 'd') {
+      player1X += player1Speed;
+    }
+    if (keyCode == 'r');
+    stage = 1;
+  }
 }
+
+
 
 
 
