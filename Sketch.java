@@ -1,12 +1,9 @@
 import processing.core.PApplet;
-import processing.core.PImage;
+
 
 
 public class Sketch extends PApplet {
   // Global Variables
-
-  // Main Screen Image
-  PImage img;
 
   // Soccer Ball Variables
   float ballX = 400;
@@ -60,8 +57,7 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
-    img = loadImage("UEFA-Champions-League.jpg");
-    img.resize(width, height);
+    background(0);
     rectMode(CENTER);
     textAlign(CENTER);
 }
@@ -73,34 +69,26 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-    image(img, 0, 0);
-  
-  if(stage == 2){
-    splash();
-  }//close 0
-  
-  if(stage == 0){ 
-    game(); 
-  }//close 0
-  }
 
+  //Soccer Field
+  background(21, 143, 82); 
+  noFill();
+  stroke(255);
+  strokeWeight(4); 
+  rect(400, 250, 800, 500); 
+  line(400, 0, 400, 500); 
+  
+  //Soccer Ball
+  noStroke();
+  fill(255, 217, 28); 
+  rect(ballX, ballY, 20, 20);
 
-private void game() {
+  // Main Player
+  noStroke();
+	fill(255);
+	rect(player1X, player1Y, pWidth, pHeight);
 }
 
-
-private void splash() {
-
-// Home Screen Image
-  img = loadImage("UEFA-Champions-League.jpg");
-  img.resize(width, height);
-
-    //START
-  fill(225, 255, 0);
-  textSize(40); 
-  text("Space To Begin", 400, 400);
-
-}//close splash
 
 
 
