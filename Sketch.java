@@ -19,8 +19,8 @@ public class Sketch extends PApplet {
   int player2Y = 245;
 
   // Location of Player
-  int pWidth = 30;
-  int pHeight = 25;  
+  int playerWidth = 30;
+  int playerHeight = 25;  
 
   // Speed of Player
   int playerSpeed = 6;
@@ -85,8 +85,22 @@ public class Sketch extends PApplet {
 
   // Main Player
   noStroke();
+	fill(0, 0, 255);
+	rect(player1X, player1Y, playerWidth, playerHeight);
+
+  // Goal Net
+  fill(255, 42, 0);
+	rect(player2X, player2Y, playerWidth, playerHeight); 
 	fill(255);
-	rect(player1X, player1Y, pWidth, pHeight);
+  strokeWeight(4);
+	rect(player2X, player2Y, playerWidth, playerHeight-20); 
+
+  //Score
+	noStroke();
+	fill(255);
+	textSize(30);
+	text("POINTS:", 100, 35); 
+	text(player1Score, 180, 35); 
 }
 
 
