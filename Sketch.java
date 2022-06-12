@@ -85,13 +85,10 @@ public class Sketch extends PApplet {
 
 
   private void game() {
-    // Soccer Field
-  background(24, 242, 31); 
-  noFill();
-  stroke(255);
-  strokeWeight(6); 
-  rect(400, 250, 800, 500); 
-  line(400, 0, 400, 500); 
+  // Fantasy Land Game Screen
+  img = loadImage("Fantasy Land.jpg"); 
+  img.resize(width, height);
+
   
   //Soccer Ball
   noStroke();
@@ -104,7 +101,7 @@ public class Sketch extends PApplet {
 	fill(30, 0, 255);
 	rect(player1X, player1Y, playerWidth, playerHeight);
 
-  // Candy on Field
+  // Candy on Right Side of Field
   fill(255, 42, 0);
 	rect(pX, pY, playerWidth, playerHeight); 
 	fill(255);
@@ -121,15 +118,14 @@ public class Sketch extends PApplet {
 	
 	if(ballY-10 <= 0){ 
 		ballDirectionY = ballDirectionY*-1;
-	}//close if < 0	
+	}
 	
 	if(ballX-10 <= 0){ 
 		ballDirectionX = ballDirectionX*-1;
-	}//close if < 0	
+	}
 
 	//HIT To Make Ball Move
 	if(ballX >= player1X-playerWidth/2 && ballX <= player1X+playerWidth/2 && ballY >= player1Y-playerHeight/2 && ballY <= player1Y+playerHeight/2){
-		//hit player 
 		ballDirectionX = ballDirectionX*-1;
 		ballSpeed = 5;
 	}
