@@ -2,23 +2,21 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 
-
-
 public class Sketch extends PApplet {
   // Global Variables
 
   // Soccer Ball Variables
   float ballX = 400;
   float ballY = 300;
-  float ballSpeed = 1;
+  float ballSpeed = 2;
   float ballDirectionX = -1;
   float ballDirectionY = -1;
 
   // Player Variables
   int player1X = 25;
   int player1Y = 250;
-  int player2X = 780;
-  int player2Y = 245;
+  int pX = 780;
+  int pY = 245;
 
   // Location of Player
   int playerWidth = 30;
@@ -52,7 +50,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(800, 500);
+    size(800, 450);
     }
   
 
@@ -62,7 +60,7 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
-    img = loadImage("UEFA-Champions-League.jpg");
+    img = loadImage("Candy.jpg");
     img.resize(width, height);
 
     rectMode(CENTER);
@@ -102,15 +100,16 @@ public class Sketch extends PApplet {
 
   // Player
   noStroke();
+  
 	fill(30, 0, 255);
 	rect(player1X, player1Y, playerWidth, playerHeight);
 
-  // Country Goal
+  // Candy on Field
   fill(255, 42, 0);
-	rect(player2X, player2Y, playerWidth, playerHeight); 
+	rect(pX, pY, playerWidth, playerHeight); 
 	fill(255);
   strokeWeight(4);
-	rect(player2X, player2Y, playerWidth, playerHeight-20); 
+	rect(pX, pY, playerWidth, playerHeight-20); 
 
   // Ball Movement
 	ballX = ballX+(ballDirectionX*ballSpeed);
@@ -128,8 +127,6 @@ public class Sketch extends PApplet {
 		ballDirectionX = ballDirectionX*-1;
 	}//close if < 0	
 
-	//collision with player 1
-	
 	//HIT To Make Ball Move
 	if(ballX >= player1X-playerWidth/2 && ballX <= player1X+playerWidth/2 && ballY >= player1Y-playerHeight/2 && ballY <= player1Y+playerHeight/2){
 		//hit player 
@@ -139,7 +136,7 @@ public class Sketch extends PApplet {
 	
 	
 	//Collision Detection With Wall Edges
-	if(ballX >= player2X-playerWidth/2 && ballX <= player2X+playerWidth/2 && ballY >= player2Y-playerHeight/2 && ballY <= player2Y+playerHeight/2){
+	if(ballX >= pX-playerWidth/2 && ballX <= pX+playerWidth/2 && ballY >= pY-playerHeight/2 && ballY <= pY+playerHeight/2){
 	
 		player1Score = player1Score+1;
 		ballX = width/2;
@@ -147,13 +144,13 @@ public class Sketch extends PApplet {
 		ballSpeed = 0; 
 	}
 	
-	//Goal Miss Above
-	if(ballX >= width && ballY >= 0 && ballY<= player2Y-playerHeight/2){
+	//Miss Above Candy
+	if(ballX >= width && ballY >= 0 && ballY<= pY-playerHeight/2){
 		ballDirectionX = ballDirectionX*-1;
 	}
 	
-	// Goal Miss Below
-	if(ballX >= width && ballY >= player2Y+playerHeight/2  && ballY<= height){
+	// Miss Below Candy
+	if(ballX >= width && ballY >= pY+playerHeight/2  && ballY<= height){
 		ballDirectionX = ballDirectionX*-1;
 	}
 		
