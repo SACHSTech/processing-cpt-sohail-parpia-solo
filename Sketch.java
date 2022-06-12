@@ -5,7 +5,7 @@ import processing.core.PImage;
 public class Sketch extends PApplet {
   // Global Variables
 
-  // Soccer Ball Variables
+  // Ball Variables
   float ballX = 400;
   float ballY = 300;
   float ballSpeed = 2;
@@ -89,15 +89,13 @@ public class Sketch extends PApplet {
   img = loadImage("Fantasy Land.jpg"); 
   img.resize(width, height);
 
-  
-  //Soccer Ball
+  //Rectangular Ball
   noStroke();
   fill(255, 217, 28); 
   rect(ballX, ballY, 20, 20);
 
   // Player
   noStroke();
-  
 	fill(30, 0, 255);
 	rect(player1X, player1Y, playerWidth, playerHeight);
 
