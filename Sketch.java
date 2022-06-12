@@ -8,7 +8,7 @@ public class Sketch extends PApplet {
   // Ball Variables
   float ballX = 400;
   float ballY = 300;
-  float ballSpeed = 2;
+  float ballSpeed = 3;
   float ballDirectionX = -1;
   float ballDirectionY = -1;
 
@@ -16,18 +16,18 @@ public class Sketch extends PApplet {
   int player1X = 25;
   int player1Y = 250;
   int pX = 780;
-  int pY = 245;
+  int pY = 250;
+
 
   // Location of Player
-  int playerWidth = 30;
-  int playerHeight = 25;  
+  int playerWidth = 25;
+  int playerHeight = 65;  
 
   // Speed of Player
   int player1Speed = 6;
 
   // Scoreboard
-  int playerScore;
-  int player1Score;
+  int player1Score = 0;
 
   // Wins
   int player1Wins;
@@ -50,7 +50,7 @@ public class Sketch extends PApplet {
    */
   public void settings() {
 	// put your size call here
-    size(800, 450);
+    size(800, 500);
     }
   
 
@@ -85,6 +85,9 @@ public class Sketch extends PApplet {
 
 
   private void game() {
+
+  keyTyped();
+
   // Fantasy Land Game Screen
   img = loadImage("Fantasy Land.jpg"); 
   img.resize(width, height);
@@ -189,16 +192,16 @@ public class Sketch extends PApplet {
 
   public void keyPressed(){
     if (keyCode == 'w') {
-      player1Y -= player1Speed;
+      player1Y -= player1Y-player1Speed;
     }
     if (keyCode == 'a') {
-      player1X -= player1Speed;
+      player1X -= player1X-player1Speed;
     }
     if (keyCode == 's') {
-      player1Y += player1Speed;
+      player1Y += player1Y-player1Speed;
     }
     if (keyCode == 'd') {
-      player1X += player1Speed;
+      player1X += player1X-player1Speed;
     }
     if (keyCode == 'r');
     stage = 1;
