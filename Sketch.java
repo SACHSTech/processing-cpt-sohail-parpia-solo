@@ -122,27 +122,17 @@ private void game() {
 
 
 private void splash() {
-}
+  //START
+  fill(225, 255, 0);
+  textSize(40); 
+  text("Press r To Begin", 400, 500);
+  textSize(40);
+  text("WELCOME TO CITY LAVA FREEDOM", 400, 200);
 
+  textAlign(CENTER);
 
-public void keyPressed(){
-  if (keyCode == UP) {
-    e1 -= e1-e1;
-  }
-  if (keyCode == LEFT) {
-    e2 -= e2-e2;
-  }
-  if (keyCode == RIGHT) {
-    e2 += e2-e2;
-  }
-  if (keyCode == DOWN) {
-    e2 +=e2-e2;
-  }
-  if (keyCode == 'r');
-  stage = 1;
 }
 }
-
 
 
 
