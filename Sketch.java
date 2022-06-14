@@ -4,11 +4,11 @@ import processing.core.PImage;
 public class Sketch extends PApplet {
   // Global Variables
 
-  // Game Variables
-  int r;
-  int d;
-  int e;
-  int e1;
+  // In Game Variables
+  int r1X=0;
+  int d1=10;
+  int e1=200;
+  int e2=200;
 
   // Keyboard Variables
   int keyPressed;
@@ -20,16 +20,12 @@ public class Sketch extends PApplet {
   PImage img;
 
   
- 
-
-
-
   /**
    * Called once at the beginning of execution, put your size all in this method
    */
   public void settings() {
 	// put your size call here
-    size(800, 800);
+    size(800, 600);
     }
   
 
@@ -53,77 +49,100 @@ public class Sketch extends PApplet {
   public void draw() {
 
     image(img, 0, 0);
-
+  
     if(stage == 0){
       splash();
     }
     
     if(stage == 1){ 
-      game();
+      game(); 
     }
-  }
-
-
-  private void splash() {
-    //Home Screen
-    img = loadImage("City Area.jpg");
-    img.resize(width, height);
-
-
-	//Name of Game
-	fill(255,0,0);
-	textSize(60); 
-	text("DANGER FALL", 400, 150);
-	
-	//START
-	fill(255, 250, 0);
-	textSize(40); 
-	text("r To Start", 400, 400);
-
-}
-
-  private void game() {
-    img = loadImage("SUNSET.jpeg");
-    img.resize(width, height);
-    
+    }
   
-  
-  //Moving purple circles 
+   
+private void game() {
+  img = loadImage("SUNSET.jpeg");
+  img.resize(width, height);
 
- //Main circle To Control
-  fill(209,32,138);
-  ellipse(e,e1,70,70);
-{
- //Moving purple circles 
-  fill(114,23,175);
-  rect(420,r,40,40,40);
-  fill(114,23,175);
-  rect(265,r,40,40,40);
-  fill(114,23,175);
-  rect(580,r,40,40,40);
+
+  //Main Player
+  fill(132, 0, 255);
+  ellipse(e1,e2,50,50);
+ {
+  //Falling Lava 
+    fill(255, 0, 0);
+    rect(420,r1X,40,40,40);
+    fill(255, 0, 0);
+    rect(265,r1X,40,40,40);
+    fill(255, 0, 0);
+    rect(580,r1X,40,40,40);
+    r1X = r1X + d1;
+    if(r1X<0||r1X>600)
+   {
+    d1=-d1;
+   }
+   {
  
+   if(get(e1,e2)==color(114,23,175))
+ {
+   
+   e1=100; 
+ }
+ //Blocks
+   fill(225, 255, 0);
+   rect(320,0,80,430);
+   fill(225, 255, 0);
+   rect(240,600,80,430);
+   fill(225, 255, 0);
+   rect(480,0,80,300);
+   fill(225, 255, 0);
+   rect(400,520,80,430);
+   fill(225, 255, 0);
+   rect(640,0,80,500);
+   fill(225, 255, 0);
+   rect(560,600,80,300);
+   fill(225, 255, 0);
+   rect(720,0,80,80);
+ {
+ if(get(e1,e2)==color(92,240,228))
+ {
+   
+   e1=100; 
+ }
+ //Finish
+ fill(random (0,255), random(0,30), random(0,240));
+ rect(720,0,80,80);
+ fill(220,250,0);
+
+ e1=100; 
+ }
+ }
+ }
 }
+
+
+private void splash() {
 }
 
 
 public void keyPressed(){
-
-  if(keyCode==UP)
-  {e1=e1-5;}
-
-   if(keyCode==DOWN)
-  {e1=e1+5;} 
-
-  if(keyCode==RIGHT)
-  {e=e+5;} 
-
-  if(keyCode==LEFT)
-  {e=e-5;}
-
+  if (keyCode == UP) {
+    e1 -= e1-e1;
+  }
+  if (keyCode == LEFT) {
+    e2 -= e2-e2;
+  }
+  if (keyCode == RIGHT) {
+    e2 += e2-e2;
+  }
+  if (keyCode == DOWN) {
+    e2 +=e2-e2;
+  }
   if (keyCode == 'r');
-    stage = 1;
+  stage = 1;
 }
 }
+
 
 
 
