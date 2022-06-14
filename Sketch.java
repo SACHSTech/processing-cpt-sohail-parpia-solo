@@ -83,7 +83,9 @@ public class Sketch extends PApplet {
 }
 
   private void game() {
-    background(251, 255, 0);
+    img = loadImage("SUNSET.jpeg");
+    img.resize(width, height);
+    
   
   
   //Moving purple circles 
