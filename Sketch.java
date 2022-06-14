@@ -40,7 +40,7 @@ public class Sketch extends PApplet {
 
   public void setup() {
 
-    img = loadImage("CITY.jpg");
+    img = loadImage("City Area.jpg");
     img.resize(width, height);
 
     rectMode(CENTER);
@@ -66,10 +66,10 @@ public class Sketch extends PApplet {
 
   private void splash() {
     //Home Screen
- img = loadImage("Fantasy Land.jpg"); 
- img.resize(width, height);
+    img = loadImage("City Area.jpg");
+    img.resize(width, height);
 
-	
+
 	//Name of Game
 	fill(255,0,0);
 	textSize(60); 
@@ -83,7 +83,44 @@ public class Sketch extends PApplet {
 }
 
   private void game() {
-  }
+    background(251, 255, 0);
+  
+  
+  //Moving purple circles 
+
+ //Main circle To Control
+  fill(209,32,138);
+  ellipse(e,e1,70,70);
+{
+ //Moving purple circles 
+  fill(114,23,175);
+  rect(420,r,40,40,40);
+  fill(114,23,175);
+  rect(265,r,40,40,40);
+  fill(114,23,175);
+  rect(580,r,40,40,40);
+ 
+}
+}
+
+
+public void keyPressed(){
+
+  if(keyCode==UP)
+  {e1=e1-5;}
+
+   if(keyCode==DOWN)
+  {e1=e1+5;} 
+
+  if(keyCode==RIGHT)
+  {e=e+5;} 
+
+  if(keyCode==LEFT)
+  {e=e-5;}
+
+  if (keyCode == 'r');
+    stage = 1;
+}
 }
 
 
