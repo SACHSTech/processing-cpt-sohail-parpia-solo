@@ -92,6 +92,11 @@ private void splash() {
 
 
 private void game() {
+  background (35, 193, 34);
+  strokeWeight(2);
+  line(120, 50, 280, 50);
+  line(120, 50, 120, 90);
+  line(280, 50, 280, 90);
 }
 }
 
