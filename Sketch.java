@@ -19,9 +19,10 @@ public class Sketch extends PApplet {
   float ballYspeed=0;
 
   // Game Score Variable
-  int score=0;
+  int score =0;
   
   // Other In Game Variables
+  int miss;
   
 
  // Screens
@@ -29,12 +30,6 @@ public class Sketch extends PApplet {
 
  // Image
  PImage img;
-
-
-
-  
- 
-
 
   /**
    * Called once at the beginning of execution, put your size all in this method
@@ -66,37 +61,46 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-    image(img, 0, 0);
-  
-    if(stage == 0){
-      splash();
-    }//close 0
-    
-    if(stage == 1){ 
-      game(); 
-    }//close 1
-    }
+  background (255, 0, 0);
+  strokeWeight(4);
 
-
-private void splash() {
-  img.resize(width, height);
-
-  //START
-  fill(225, 255, 0);
-  textSize(40); 
-  text("FOOTBALL CLICKER", 400, 200);
-  text("Press Arrow To Begin", 400, 400);
-
-
-}
-
-
-private void game() {
-  background (35, 193, 34);
-  strokeWeight(2);
+  // Net
   line(120, 50, 280, 50);
   line(120, 50, 120, 90);
   line(280, 50, 280, 90);
+  stroke(255, 255, 255);
+  strokeWeight(8);
+  line(0, 90, 400, 90);
+  line(65, 90, 65, 140);
+  line(65, 140, 333, 140);
+  line(333, 140, 333, 90);
+  line(0, 255, 600, 255);
+  fill(255, 255, 255);
+
+  fill(0);
+  textAlign(CENTER);
+  textSize(10);
+
+  // Text
+  textSize(20);
+  text("Score: "+score, 50, 435);
+
+  // Goal Keeper
+  stroke(0, 21, 255);
+  strokeWeight(6);
+
+
+  line(goalieX, 90, goalieX+goalieS, 90);
+  if (goalieX >= 280-goalieS)
+  {
+    xspeed *= -1;
+    goalieX= 280-goalieS;
+  }
+  if (goalieX <= 120)
+  {
+    xspeed *= -1;
+  }
+  goalieX=goalieX+xspeed;
 }
 }
 
