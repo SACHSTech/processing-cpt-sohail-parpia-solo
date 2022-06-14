@@ -61,13 +61,8 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
-    img = loadImage("TROPHY.jpg");
-    img.resize(width, height);
-
     rectMode(CENTER);
     textAlign(CENTER);
-
-
   }
 
 
@@ -77,28 +72,50 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-    image(img, 0, 0);
   
-    if(stage == 0){
-      splash();
-    }//close 0
-    
-    if(stage == 1){ 
-      game(); 
-    }//close 1
-    }
+  // Field
+	background(0); 
+	noFill();
+	stroke(255);
+	strokeWeight(2); 
+	rect(400, 250, 800, 500); 
+	line(400, 0, 400, 500); 
+	
+	//Ball
+	noStroke();
+	fill(255); 
+	rect(ballX, ballY, 20, 20);
+	
+	//Player
+	noStroke();
+	fill(255);
+	rect(player1X, player1Y, playerWidth, playerHeight); 
+	
+	//Goal Net
+	fill(255, 250, 0);
+	rect(pX, pY, playerWidth, playerHeight); 
+	fill(0);
+	rect(pX-10, pY, playerWidth, playerHeight-20); 
 
-
-private void splash() {
-  img.resize(width, height);
+  // Ball Movement
+  ballX = ballX+(ballDirectionX*ballSpeed);
+  ballY = ballY+(ballDirectionY*ballSpeed);
   
-}
+  if(ballY+10 >= height){ 
+    ballDirectionY = ballDirectionY*-1;
+  } 
+  
+  if(ballY-10 <= 0){ 
+    ballDirectionY = ballDirectionY*-1;
+  }
+  
+  if(ballX-10 <= 0){ 
+    ballDirectionX = ballDirectionX*-1;
+  }
 
-
-private void game() {
+	
+  }
 }
-}
-
 
 
   
