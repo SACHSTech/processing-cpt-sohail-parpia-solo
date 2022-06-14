@@ -74,10 +74,10 @@ public class Sketch extends PApplet {
   public void draw() {
   
   // Field
-	background(0); 
+	background(109, 133, 252); 
 	noFill();
 	stroke(255);
-	strokeWeight(2); 
+	strokeWeight(4); 
 	rect(400, 250, 800, 500); 
 	line(400, 0, 400, 500); 
 	
@@ -88,13 +88,13 @@ public class Sketch extends PApplet {
 	
 	//Player
 	noStroke();
-	fill(255);
+	fill(255, 0, 68);
 	rect(player1X, player1Y, playerWidth, playerHeight); 
 	
 	//Goal Net
-	fill(255, 250, 0);
+	fill(238, 255, 0);
 	rect(pX, pY, playerWidth, playerHeight); 
-	fill(0);
+	fill(109, 133, 252);
 	rect(pX-10, pY, playerWidth, playerHeight-20); 
 
   // Ball Movement
@@ -104,15 +104,19 @@ public class Sketch extends PApplet {
   if(ballY+10 >= height){ 
     ballDirectionY = ballDirectionY*-1;
   } 
-  
   if(ballY-10 <= 0){ 
     ballDirectionY = ballDirectionY*-1;
   }
-  
   if(ballX-10 <= 0){ 
     ballDirectionX = ballDirectionX*-1;
   }
 
+  //Scoreboard
+	noStroke();
+	fill(255);
+	textSize(30);
+	text("POINTS", 100, 35); 
+	text(p1Score, 180, 35); 
 	
   }
 }
