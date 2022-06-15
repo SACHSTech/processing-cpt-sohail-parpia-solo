@@ -2,7 +2,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Sketch extends PApplet {
-  // Global 
+  // Global Variables
   
 // Lava
 int L1X=0;
