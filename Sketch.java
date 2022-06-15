@@ -54,6 +54,25 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
+    image(img, 0, 0);
+  
+    if(stage == 0){
+      splash();
+    }
+    
+    if(stage == 1){ 
+      game(); 
+    }
+    }
+
+
+private void splash() {
+}
+
+
+private void game() {
+}
+
   }
 }
     
