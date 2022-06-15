@@ -2,22 +2,27 @@ import processing.core.PApplet;
 import processing.core.PImage;
 
 public class Sketch extends PApplet {
-  // Global Variables
+  // Global 
+  
+// Lava
+int L1X=0;
+  
+// Blocks
+int B1=10;
 
-  // In Game Variables
-  int r1X=0;
-  int d1=10;
-  int e1=200;
-  int e2=200;
+// Locations
+int e1=200;
+int e2=200;
 
-  // Keyboard Variables
-  int keyPressed;
+// Keyboard Variables
+boolean keyPressed;
 
-  // Screens
-  int stage;
+// Screens
+int stage;
 
-  // Image
-  PImage img;
+// Image
+PImage img;
+
 
   
   /**
@@ -35,8 +40,7 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
-
-    img = loadImage("City Area.jpg");
+    img = loadImage("Dark City.jpg");
     img.resize(width, height);
 
     rectMode(CENTER);
@@ -47,7 +51,6 @@ public class Sketch extends PApplet {
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-
     image(img, 0, 0);
   
     if(stage == 0){
@@ -59,33 +62,45 @@ public class Sketch extends PApplet {
     }
     }
   
-   
-private void game() {
-  img = loadImage("SUNSET.jpeg");
-  img.resize(width, height);
 
+    private void splash() {
+      
+  //START GAME
+  fill(225, 255, 0);
+  textSize(40); 
+  text("To BEGIN, Press r", 400, 500);
+  textSize(40);
+  text("WELCOME TO LAVA CITY OBSTACLE", 400, 200);
+
+  textAlign(CENTER);
+
+
+}
+
+
+    private void game() {
+      img = loadImage("SUNSET.jpeg");
+  img.resize(width, height);
 
   //Main Player
   fill(132, 0, 255);
-  ellipse(e1,e2,50,50);
+  ellipse(e1,e2,30,30);
  {
   //Falling Lava 
     fill(255, 0, 0);
-    rect(420,r1X,40,40,40);
+    rect(420,L1X,40,40,40);
     fill(255, 0, 0);
-    rect(265,r1X,40,40,40);
+    rect(265,L1X,40,40,40);
     fill(255, 0, 0);
-    rect(580,r1X,40,40,40);
-    r1X = r1X + d1;
-    if(r1X<0||r1X>600)
+    rect(580,L1X,40,40,40);
+    L1X = L1X + B1;
+    if(L1X<0||L1X>600)
    {
-    d1=-d1;
+    B1=-B1;
    }
    {
- 
    if(get(e1,e2)==color(114,23,175))
  {
-   
    e1=100; 
  }
  //Blocks
@@ -120,42 +135,36 @@ private void game() {
  }
 }
 
-
-private void splash() {
-  //START
-  fill(225, 255, 0);
-  textSize(40); 
-  text("Press r To Begin", 400, 500);
-  textSize(40);
-  text("WELCOME TO CITY LAVA FREEDOM", 400, 200);
-
-  textAlign(CENTER);
-
-}
-
-
-public void keyPressed(){
-  // To move Up
-  if(keyCode==UP)
+  public void keyPressed(){
+{
+  if(keyCode == UP)
   {e2=e2-5;}
 
   // To move Down
-   if(keyCode==DOWN)
+   if(keyCode == DOWN)
   {e2=e2+5;} 
 
   // To move Right
-  if(keyCode==RIGHT)
+  if(keyCode == DOWN)
   {e1=e1+5;} 
 
   // To move Left
-  if(keyCode==LEFT)
+  if(keyCode == LEFT)
   {e1=e1-5;}
 
   // To begin game
   if (keyCode == 'r');
   stage=1;
+
+  
+  }
 }
 }
+
+
+    
+
+
 
 
   
