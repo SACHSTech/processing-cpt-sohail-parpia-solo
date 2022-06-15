@@ -81,7 +81,6 @@ private void splash() {
 
 }
 
-
 private void game() {
   img = loadImage("SUNSET.jpeg");
   img.resize(width, height);
@@ -138,6 +137,32 @@ private void game() {
  }
  }
 }
+
+public void keyPressed(){
+  // Movement of Player
+
+  // To move Up
+  if(keyCode==UP)
+  {e2=e2-5;}
+
+  // To move Down
+   if(keyCode==DOWN)
+  {e2=e2+5;} 
+
+  // To move Right
+  if(keyCode==RIGHT)
+  {e1=e1+5;} 
+
+  // To move Left
+  if(keyCode==LEFT)
+  {e1=e1-5;}
+
+  // To begin game
+  if (keyCode == 'r');
+  stage=1;
+}
+}
+
 
 
 
