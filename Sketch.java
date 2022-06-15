@@ -1,27 +1,24 @@
 import processing.core.PApplet;
 import processing.core.PImage;
 
-
-
-
 public class Sketch extends PApplet {
   // Global Variables
 
   // Lava Variable
-  int lvx = 0;
+  int lrx=0;
 
   // Blocks Variable
-  int brz =10;
+  int dir=10;
 
   // Location Variables
-  int ex = 200;
-  int ey = 200;
-
-  // Image
-  PImage img;
+  int e1x=200;
+  int e1y=200;
 
   // Movement
   int keyPressed;
+
+  // Image
+  PImage img;
 
   // Screens
   int stage;
@@ -49,11 +46,12 @@ public class Sketch extends PApplet {
     textAlign(CENTER);
   }
 
+  
+
 /**
    * Called repeatedly, anything drawn to the screen goes here
    */
   public void draw() {
-
     image(img, 0, 0);
   
     if(stage == 0){
@@ -64,10 +62,76 @@ public class Sketch extends PApplet {
       game(); 
     }
     }
+  
+  
+   private void game() {
+  //Player 
+  fill(3, 255, 28);
+  ellipse(e1x,e1y,70,70);
+  {
+   //Lava
+  fill(255, 0, 0);
+  rect(420,lrx,40,40,40);
+  fill(255, 0, 0);
+  rect(265,lrx,40,40,40);
+  fill(255, 0, 0);
+  rect(580,lrx,40,40,40);
+   lrx = lrx + dir;
+   if(lrx<0||lrx>600)
+   {
+    dir=-dir;
+   }
+   {
+  
+  if(get(e1x,e1y)==color(114,23,175))
+  {
+    
+    e1x=100; //restart position if touch blocks
+  }
+  //Blocks
+   fill(195, 0, 255);
+   rect(320,0,80,430);
+   fill(195, 0, 2552);
+   rect(240,600,80,430);
+   fill(195, 0, 255);
+   rect(480,0,80,300);
+   fill(195, 0, 255);
+   rect(400,520,80,430);
+   fill(195, 0, 255);
+   rect(640,0,80,500);
+   fill(195, 0, 255);
+   rect(560,600,80,300);
+   fill(0);
+   rect(720,0,80,80);
+  {
+  if(get(e1x,e1y)==color(195, 0, 255))
+  {
+    
+    e1x=100; //restart position if touch blocks
+  }
+  //Finish
+  fill(random (0,255), random(0,30), random(0,240));
+  rect(720,0,80,80);
+  fill(220,250,0);
+  rect(720,0,80,80);
+  fill(69,28,234);
+  textSize(25);
+  text("Finish",720,25);
+  textSize(20);
+  
+}
+}
+}
+}
+  {
+  {
+    
+    e1x=100; 
+  }
+  }
 
-    private void splash() {
-      // Home Screen
 
+  private void splash() {
   //START GAME
   fill(225, 255, 0);
   textSize(40); 
@@ -76,105 +140,31 @@ public class Sketch extends PApplet {
   text("WELCOME TO LAVA CITY OBSTACLE", 400, 200);
 
   textAlign(CENTER);
-}
 
-
-    private void game() {
-     img = loadImage("SUNSET.jpeg");
-     img.resize(width, height);
-    
- 
-      //Player 
-      fill(209,32,138);
-      ellipse(ex,ey,50,50);
-      {
-      
-      //Lava Falling
-      fill(255, 8, 0);
-      rect(420,lvx,40,40,40);
-      fill(255, 8, 0);
-      rect(265,lvx,40,40,40);
-      fill(255, 8, 0);
-      rect(580,lvx,40,40,40);
-      lvx = lvx + brz;
-       if(lvx<0||lvx>600)
-        {
-      brz=-brz;
-        }
-      {
-        
-      if(get(ex,ey)==color(114,23,175))
-        {
-        
-      // Position of player after touching falling lava
-          ex=100; 
-        }
-
-        //Blocks
-         fill(0, 255, 255);
-         rect(320,0,80,430);
-         fill(0, 255, 255);
-         rect(240,600,80,430);
-         fill(0, 255, 255);
-         rect(480,0,80,300);
-         fill(0, 255, 255);
-         rect(400,520,80,430);
-         fill(0, 255, 255);
-         rect(640,0,80,500);
-         fill(0, 255, 255);
-         rect(560,600,80,300);
-         fill(0, 255, 255);
-         rect(720,0,80,80);
-        {
-        if(get(ex,ey)==color(92,240,228))
-        {
-      
-          ex=100; 
-        }
-
-        //Finish Area
-        fill(random (0,255), random(0,30), random(0,240));
-        rect(720,0,80,80);
-        fill(220,250,0);
-        rect(720,0,80,80);
-        fill(69,28,234);
-        textSize(25);
-        text("HERE",720,35);
-        {
-          
-          ex=100; 
-        }
-        }
-        }
-      }
-        }
+  }
   
 
-
-   
-
-public void keyPressed(){
+ public void keyPressed(){
   // Movement of Player
   if(keyCode == UP)
-  {ey=ey-5;}
+  {e1y=e1y-5;}
 
    if(keyCode == DOWN)
-  {ey=ey+5;} 
+  {e1y=e1y+5;} 
 
   if(keyCode == RIGHT)
-  {ex=ex+5;} 
+  {e1x=e1x+5;} 
 
   if(keyCode == LEFT)
-  {ex=ex-5;}
-
+  {e1x=e1x-5;}
+  
   // To begin game
   if (keyCode == 'r');
   stage=1;
-  
-
+}
 
 }
-}
+
 
 
 
