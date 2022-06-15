@@ -71,10 +71,66 @@ private void splash() {
 
 
 private void game() {
+  img = loadImage("SUNSET.jpeg");
+  img.resize(width, height);
+
+  //Main Player
+  fill(132, 0, 255);
+  ellipse(e1,e2,30,30);
+ {
+  //Falling Lava 
+    fill(255, 0, 0);
+    rect(420,L1X,40,40,40);
+    fill(255, 0, 0);
+    rect(265,L1X,40,40,40);
+    fill(255, 0, 0);
+    rect(580,L1X,40,40,40);
+    L1X = L1X + B1;
+    if(L1X<0||L1X>600)
+   {
+    B1=-B1;
+   }
+   {
+   if(get(e1,e2)==color(114,23,175))
+ {
+   e1=100; 
+ }
+ //Blocks
+   fill(225, 255, 0);
+   rect(320,0,80,430);
+   fill(225, 255, 0);
+   rect(240,600,80,430);
+   fill(225, 255, 0);
+   rect(480,0,80,300);
+   fill(225, 255, 0);
+   rect(400,520,80,430);
+   fill(225, 255, 0);
+   rect(640,0,80,500);
+   fill(225, 255, 0);
+   rect(560,600,80,300);
+   fill(225, 255, 0);
+   rect(720,0,80,80);
+ {
+ if(get(e1,e2)==color(92,240,228))
+ {
+   
+   e1=100; 
+ }
+ //Finish
+ fill(random (0,255), random(0,30), random(0,240));
+ rect(720,0,80,80);
+ fill(220,250,0);
+
+ e1=100; 
+ }
+ }
+ }
 }
 
+
+
   }
-}
+
     
 
 
