@@ -67,6 +67,18 @@ public class Sketch extends PApplet {
 
 
 private void splash() {
+  // Home Screen
+
+  //START GAME
+  fill(225, 255, 0);
+  textSize(40); 
+  text("To BEGIN, Press r", 400, 500);
+  textSize(40);
+  text("WELCOME TO LAVA CITY OBSTACLE", 400, 200);
+
+  textAlign(CENTER);
+
+
 }
 
 
