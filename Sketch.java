@@ -42,6 +42,12 @@ public class Sketch extends PApplet {
    */
 
   public void setup() {
+    img = loadImage("Dark City.jpg");
+    img.resize(width, height);
+
+    rectMode(CENTER);
+    textAlign(CENTER);
+
   }
 
 /**
