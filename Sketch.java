@@ -11,8 +11,8 @@ public class Sketch extends PApplet {
   int dir=10;
 
   // Location Variables
-  int e1x=200;
-  int e1y=200;
+  int eL1x=200;
+  int eL1y=200;
 
   // Movement
   int keyPressed;
@@ -66,16 +66,18 @@ public class Sketch extends PApplet {
   
    private void game() {
   //Player 
-  fill(3, 255, 28);
-  ellipse(e1x,e1y,70,70);
+  fill(251, 255, 0);
+  ellipse(eL1x,eL1y,50,50);
   {
-   //Lava
+   //Lava Balls
   fill(255, 0, 0);
   rect(420,lrx,40,40,40);
   fill(255, 0, 0);
   rect(265,lrx,40,40,40);
   fill(255, 0, 0);
   rect(580,lrx,40,40,40);
+  fill(255, 0, 0);
+  rect(350,lrx, 40, 40, 40);
    lrx = lrx + dir;
    if(lrx<0||lrx>600)
    {
@@ -83,42 +85,39 @@ public class Sketch extends PApplet {
    }
    {
   
-  if(get(e1x,e1y)==color(114,23,175))
+  if(get(eL1x,eL1y)==color(255, 0, 0))
   {
     
-    e1x=100; //restart position if touch blocks
+    eL1x=100; //restart position if player touch blocks
   }
   //Blocks
    fill(195, 0, 255);
-   rect(320,0,80,430);
-   fill(195, 0, 2552);
-   rect(240,600,80,430);
+   rect(320,0,80,550);
    fill(195, 0, 255);
-   rect(480,0,80,300);
+   rect(240,600,80,490);
    fill(195, 0, 255);
-   rect(400,520,80,430);
+   rect(480,0,80,420);
    fill(195, 0, 255);
-   rect(640,0,80,500);
+   rect(400,520,80,420);
    fill(195, 0, 255);
-   rect(560,600,80,300);
+   rect(640,0,80,520);
+   fill(195, 0, 255);
+   rect(560,600,80,620);
    fill(0);
-   rect(720,0,80,80);
+   rect(720,0,80,450);
   {
-  if(get(e1x,e1y)==color(195, 0, 255))
+  if(get(eL1x,eL1y)==color(195, 0, 255))
   {
     
-    e1x=100; //restart position if touch blocks
+    eL1x=100; //restart position if player touch blocks
   }
+
   //Finish
   fill(random (0,255), random(0,30), random(0,240));
   rect(720,0,80,80);
   fill(220,250,0);
   rect(720,0,80,80);
-  fill(69,28,234);
-  textSize(25);
-  text("Finish",720,25);
-  textSize(20);
-  
+  fill(69,28,234); 
 }
 }
 }
@@ -126,10 +125,9 @@ public class Sketch extends PApplet {
   {
   {
     
-    e1x=100; 
+    eL1x=100; 
   }
   }
-
 
   private void splash() {
   //START GAME
@@ -142,21 +140,20 @@ public class Sketch extends PApplet {
   textAlign(CENTER);
 
   }
-  
 
  public void keyPressed(){
   // Movement of Player
   if(keyCode == UP)
-  {e1y=e1y-5;}
+  {eL1y=eL1y-5;}
 
    if(keyCode == DOWN)
-  {e1y=e1y+5;} 
+  {eL1y=eL1y+5;} 
 
   if(keyCode == RIGHT)
-  {e1x=e1x+5;} 
+  {eL1x=eL1x+5;} 
 
   if(keyCode == LEFT)
-  {e1x=e1x-5;}
+  {eL1x=eL1x-5;}
   
   // To begin game
   if (keyCode == 'r');
